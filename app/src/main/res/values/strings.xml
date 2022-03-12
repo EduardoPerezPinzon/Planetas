@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Planetas de la Vía Láctea</string>
+    <string name="nombre">Nombre : </string>
+    <string name="orden">Orden : </string>
+</resources>
