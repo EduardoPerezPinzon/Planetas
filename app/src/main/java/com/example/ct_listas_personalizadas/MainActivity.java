@@ -3,16 +3,22 @@ package com.example.ct_listas_personalizadas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Planet.class);
                 intent.putExtra("DESC", descripcion[i]);
                 intent.putExtra("NAME", nombres[i]);
-
                 startActivity(intent);
-                //Toast.makeText(getApplicationContext(), "Seleccionaste : " + descripcion[i], Toast.LENGTH_LONG).show();
             }
         });
-
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(getApplicationContext(), "El costo es : " + precios[i], Toast.LENGTH_LONG).show();
-                return true;
-            }
-        });
-
     }
 }
